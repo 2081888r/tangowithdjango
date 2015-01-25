@@ -6,7 +6,6 @@ django.setup()
 
 from rango.models import Category, Page
 
-
 def populate():
     python_cat = add_cat("Python",128,64)
 
@@ -67,6 +66,8 @@ def add_page(cat, title, url, views=0):
 
 def add_cat(name, views, likes):
     c = Category.objects.get_or_create(name=name, views=views, likes=likes)[0]
+    c.views = views
+    c.likes = likes
     return c
 
 # Start execution here!
