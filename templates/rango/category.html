@@ -20,6 +20,8 @@
             The specified category {{ category_name }} does not exist!
         {% endif %}
 		
+		{% if user.is_authenticated %}
 		<a href="add_page/">Add page</a> 
+		{% endif %}
     </body>
 </html>
