@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <!-- Not really, most of us just copy/paste -->
-        <title>Rango</title>
-    </head>
+{% extends 'base.html' %}
 
-    <body>
+{% load staticfiles %}
+
+{% block title %} Rango {% endblock %}
+
+{% block body_block %}
         <h1>Login to Rango</h1>
 
         <form id="login_form" method="post" action="/rango/login/">
@@ -16,7 +15,5 @@
             <br />
 
             <input type="submit" value="submit" />
-        </form>
-
-    </body>
-</html>
+        </form>		
+{% endblock %}
