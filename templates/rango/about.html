@@ -6,8 +6,10 @@
 
 {% block body_block %}
 		<h1>Rango says here is the about page.</h1>
-        This tutorial was put together by Thomas Robertson, 2081888</h1><br />
-		<img src="{% static "images/me.jpg" %}" alt="Picture of me" /> <br />
-
+		
+        This tutorial was put together by Thomas Robertson, 2081888</h1><br/>
+		<img src="{% static "images/me.jpg" %}" alt="Picture of me" /> <br/>
+		
+		<p> This page has been visited {{ visits }} times</p> <br/>
 {% endblock %}
 
