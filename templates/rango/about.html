@@ -5,11 +5,25 @@
 {% block title %} About {% endblock %}
 
 {% block body_block %}
-		<h1>Rango says here is the about page.</h1>
-		
-        This tutorial was put together by Thomas Robertson, 2081888</h1><br/>
+
+<div class="page-header">
+                <h1>About</h1>
+            </div>
+            <div>
+            <p></strong>.</p>
+			<p> This page has been visited {{ visits }} times</p> <br/>
+            <img  width="180" height="100" src="{% static "images/rango.jpg" %}" alt="Picture of Rango" /> <!-- New line -->
+            </div>
+
+
+
+		Rango says here is the about page.<br/>
+		.<br/>
 		<img src="{% static "images/me.jpg" %}" alt="Picture of me" /> <br/>
+		This tutorial was put together by Thomas Robertson, 2081888</h1><br/>
 		
-		<p> This page has been visited {{ visits }} times</p> <br/>
 {% endblock %}
 
+
+
+    
