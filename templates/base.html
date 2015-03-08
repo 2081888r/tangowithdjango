@@ -35,11 +35,12 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
-				<li><a href="{% url 'search' %}">Search</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
                         <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
                         <li><a href="{% url 'add_category' %}">Add a New Category</a></li>
+						<li><a href="{% url 'profile' user.username %}">Profile</a></li>
+						<li><a href="{% url 'users' %}">Users</a></li>
                     {% else %}
                         <li><a href="{% url 'registration_register' %}">Register Here</a></li>
                         <li><a href="{% url 'auth_login' %}">Login</a></li>
@@ -54,18 +55,24 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-			{% load rango_extras %}
-            {% block side_block %}
-			{% get_category_list category %}
-			{% endblock %}
-
-        </div>
+			{% block side_block %}{% endblock %}
+			
+		</div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
            <div>
                 {% block body_block %}{% endblock %}
-                </div>
-        </div>
-      </div>
+                </div>	
+			</div>
+		</div>
+			
+			{% load rango_extras %}
+			<div class="col-sm-3 col-md-2 sidebar">
+			
+            {% block sidebar_block %}
+			{% get_category_list category %}
+			{% endblock %}
+
+        
     </div>
 
     <!-- Bootstrap core JavaScript
